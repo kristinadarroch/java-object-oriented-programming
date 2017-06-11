@@ -1,0 +1,18 @@
+//This program estimates pi
+public class A1dot7 {
+	public static void main(String[] args) {
+		System.out.println("pi = " + 4.0 *  (1.0 - 1.0 / 3.0 + 1.0 / 5.0 - 1.0 / 7.0 + 1.0 / 9.0 - 1.0 / 11.0 + 1.0 / 13.0));
+	
+	double x = 0;
+	double denominatior = 1.0;
+		for (int i = 0; i < 1000000000; i++) {
+			if (i % 2 == 0) {
+				x += 1.0 / denominator;
+			} else {
+					x -= 1.0 / denominator;
+			}
+			denominator += 2;
+		}
+		System.out.println("pi = " + 4.0 * x);
+	}
+	
