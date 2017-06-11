@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class A3dot11 {
+	public static void main(String [] args){
+	Scanner input = new Scanner(System.in);
+
+    System.out.print("Enter a year: ");
+    int year = input.nextInt();
+    input.nextLine();
+
+    System.out.print("Enter a month (in number ex. 01 for Jan: ");
+    String month = input.nextLine();
+// use switch to display how many days are in the month
+    boolean isLeapYear = ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
+
+        switch (month){
+        case "01":
+        case "03":
+        case "05":
+        case "07":
+        case "08":
+        case "10":
+        case "12":
+            System.out.println(month + " " + year + " has 31 days"); break;
+
+        case "04":
+        case "06":
+        case "09":
+        case "11":
+            System.out.println(month + " " + year + " has 30 days"); break;
+        
+        case "02":
+             if (isLeapYear)
+            System.out.println(month + " " + year + " has 29 days");
+            else
+            System.out.println(month + " " + year + "has 28 days");
+        }     
+	}
+}	
