@@ -1,0 +1,19 @@
+// this program calculates the area and volume of a cylinder
+import java.util.Scanner;
+
+public class A2dot2 {
+	public static void main(String [] args){
+	
+	Scanner input = new Scanner(System.in);
+	System.out.print("Enter radius and length of a cylinder: ");
+	double radius = input.nextDouble();
+	double length = input.nextDouble();
+	
+	// display area and radius 
+	double area = radius * radius * Math.PI;
+	double volume = area * length; 
+	
+	System.out.println("The area of the cylinder is: " + area);
+	System.out.println("The volume of the cylinder is: " + volume);
+	}
+}	
