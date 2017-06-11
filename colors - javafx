@@ -1,0 +1,81 @@
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.shape.*;
+import javafx.scene.shape.Circle;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
+
+Circle circleRed = new Circle(150, 50, 20);
+Circle circleYellow = new Circle(150, 100, 20);
+Circle circleGreen = new Circle(150, 150, 20);
+
+public class A16dot3 extends Application {
+	public static void main(String[] args){
+		Application.launch(args);
+	}
+	
+	public void start(Stage primaryStage){
+		Pane pane = new Pane();
+		
+		
+		circleRed.setFill(Color.GRAY);
+		circleYellow.setFill(Color.GRAY);
+		circleGreen.setFill(Color.GRAY);
+		
+		Rectangle rectangle = new Rectangle(120, 20, 60, 160);
+		rectangle.setFill(Color.LIGHTGRAY);
+		
+		pane.getChildren().addAll(rectangle, circleRed, circleYellow, circleGreen);
+		
+		RadioButton rbRed = new RadioButton("Red");
+		RadioButton rbYellow = new RadioButton("Yellow");
+		RadioButton rbGreen = new RadioButton("Green");
+		
+		rbRed.setOnAction(e -> setRed());
+		rbYellow.setOnAction(e -> setYellow());
+		rbGreen.setOnAction(e -> setGreen());
+		
+		HBox hBox = new HBox(50);
+		hBox.setPrefHeight(50);
+		hBox.setAlignment(Pos.CENTER);
+		hBox.getChildren().addAll(rbRed, rbYellow, rbGreen);
+		
+		ToggleGroup group = new ToggleGroup();
+		rbRed.setToggleGroup(group);
+		rbYellow.setToggleGroup(group);
+		rbGreen.setToggleGroup(group);
+		
+		BorderPane borderPane = new BorderPane();
+		borderPane.setCenter(pane);
+		borderPane.setBottom(hBox);
+		
+		Scene scene = new Scene(borderPane, 300, 500);
+		primaryStage.setTitle("Traffic Light");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+	private void setGreen() {
+		resetLights();
+		circleGreen.setFill(Color.LIMEGREEN);
+	}
+
+	private void setYellow() {
+		resetLights();
+		circleYellow.setFill(Color.YELLOW);
+	}
+
+	private void setRed() {
+		resetLights();
+		circleRed.setFill(Color.RED);
+	}
+	private void resetLights(){
+		circleRed.setFill(Color.GRAY);
+		circleYellow.setFill(Color.GRAY);
+		circleGreen.setFill(Color.GRAY);
+	}
+}
