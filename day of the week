@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class A3dot5 {
+	public static void main(String [] args){
+	//prompt user to enter an integer for today's day of the week
+	// Sunday 0, Monday 1, ect. 
+	
+	Scanner input = new Scanner(System.in);
+	System.out.print("Enter day of the week (num): ");
+	int day = input.nextInt();
+
+System.out.print("Enter the number of days elapsed since today:  ");
+int elapsed = input.nextInt();
+
+String s1 = "";
+String s2 = "";
+
+switch (day) {
+case 0: s1 = "Sunday"; break;
+case 1: s1 = "Monday"; break;
+case 2: s1 = "Tuesday"; break;
+case 3: s1 = "Wednesday"; break;
+case 4: s1 = "Thursday"; break;
+case 5: s1 = "Friday"; break;
+case 6: s1 = "Saturday"; break;
+}
+
+switch ((elapsed + day) % 7) {
+case 0: s2 = "Sunday"; break;
+case 1: s2 = "Monday"; break;
+case 2: s2 = "Tuesday"; break;
+case 3: s2 = "Wednesday"; break;
+case 4: s2 = "Thursday"; break;
+case 5: s2 = "Friday"; break;
+case 6: s2 = "Saturday"; break;
+
+}
+System.out.print("Today is " + s1 + " and the future day is " + s2);
+input.close();
+	
+	
+	
+	
+	
+	}
+	}
