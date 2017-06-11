@@ -1,0 +1,17 @@
+//display table of conversion of kilograms to pounds
+package fall2016;
+
+public class A5dot3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//conversion of kilograms to pounds
+		 final double pound = 2.2;
+	       System.out.println("Kilograms   Pounds");
+	       for(int i = 1; i < 200; i = i+2){
+	           System.out.println(i + "          " +(i * pound));
+	       }
+			  }
+			   
+			 
+			 }
