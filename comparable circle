@@ -1,0 +1,20 @@
+public class A103dot6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ComparableCircle c1 = new ComparableCircle(3);
+		ComparableCircle c2 = new ComparableCircle(3);
+		
+		
+		int answer = c1.compareTo(c2);
+		if (answer == 1){
+			System.out.println("The circle 1 has a larger area");
+			
+		}else if (answer == -1){
+			System.out.println("Circle 2 has a larger area");
+		}else{
+			System.out.println("The circles have the same area");
+		}
+	}
+
+}
