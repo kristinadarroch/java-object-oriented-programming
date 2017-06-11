@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class A2dot5 {
+	public static void main(String [] args){
+	// read subtotal and gratuity rate
+	// compute gratuity and total
+	
+	Scanner input = new Scanner(System.in);
+	System.out.print("Enter the subtotal and gratuity: ");
+	double subtotal = input.nextDouble();
+	double gratuity = input.nextDouble();
+	
+	// display gratuity and total
+	
+	double tax = gratuity * subtotal;
+	double total = tax + subtotal; 
+	
+	System.out.println("The gratuity is " + tax + "and the total is " + total);
+	
+	}
+}
