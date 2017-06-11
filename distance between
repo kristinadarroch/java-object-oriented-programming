@@ -1,0 +1,60 @@
+public class A10dot4 {
+
+	public static void main (String[] args) {
+			GetPoint a = new GetPoint(0, 0);
+			GetPoint b = new GetPoint(10, 30.5);
+	        
+	        System.out.printf(
+	            "The distance between the points %s and %s is %f.\n",
+	            a, b, b.distance(a));
+	    }
+	}
+
+	
+	class GetPoint {
+	    private double x;
+	    private double y;
+	    
+	    public GetPoint() {
+	        this(0, 0);
+	    }
+	    
+	    public GetPoint(double x, double y) {
+	        this.x = x;
+	        this.y = y;
+	    }
+	    
+	   
+	    public double distance(double x, double y) {
+	        
+	        return Math.sqrt(
+	            (x - this.x)*(x - this.x) +
+	            (y - this.y)*(y - this.y));
+	    }
+	    
+	    
+	    public double distance(GetPoint other) {
+	        return other.distance(this.x, this.y);
+	    }
+	    
+	    
+	    public double distance() {
+	        return this.distance(0.0, 0.0);
+	    }
+	    
+	    
+	    public String __repr__() {
+	        return String.format("MyPoint(%f, %f)", this.x, this.y);
+	    }
+	    
+	    
+	    public String toString() {
+	        return String.format("(%f, %f)", this.x, this.y);
+	    }
+	    
+	   
+	}
+	
+	
+	
+
