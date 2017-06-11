@@ -1,0 +1,50 @@
+import java.io.File;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class A12dot15 {
+
+	public static void main(String[] args) {
+		
+		File f = new File("Data.txt");
+		try {
+			writeData(f);
+			//int[] myList = readData(f);
+			//Arrays.sort(myList);
+			//printData(myList);
+			
+		}catch (Exception e){
+			System.out.println("Error with file.");
+		}
+		
+
+	}
+
+	private static int[] readData(File f)throws Exception {
+		try(Scanner input = new Scanner(f)){
+			int[] myList = new int[100];
+			
+			for (int i = 0; input.hasNext(); i++){
+				myList[i] = input.nextInt();
+			}
+		}
+		return null;
+		
+	}
+
+	private static void writeData(File f) throws Exception{
+		try (PrintWriter output = new PrintWriter(f)) {
+		for (int i = 0; i < 100; i++){
+			output.print((int)(Math.random() * 100) + " ");
+		}
+		}
+		
+	}
+
+	private static void printData(int[] myList) {
+		// TODO Auto-generated method stub
+		for (int i = 0; i )
+		
+	}
+
+}
